@@ -12,3 +12,15 @@ def count_characters(book_content):
         num_per_characters[char] = num_per_characters.get(char, 0) + 1
     return num_per_characters
 
+def sort_characters(num_per_characters):
+    def sort_by(dictionary):
+        return dictionary["num"]
+    sorted_characters = []
+    for char in num_per_characters:
+        sorted_characters.append({"char":char, "num":num_per_characters[char]})
+    sorted_characters.sort(reverse=True, key=sort_by)
+    return sorted_characters
+    
+
+
+
